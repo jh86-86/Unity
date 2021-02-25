@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7571317291287091544}
-  forwardForce: 8000
+  forwardForce: 1000
   sidewaysForce: 120
   jumpForce: 100
   onGround: 1
