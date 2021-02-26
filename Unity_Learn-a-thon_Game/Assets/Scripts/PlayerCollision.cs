@@ -9,13 +9,16 @@ public class PlayerCollision : MonoBehaviour
     {
         if (collisionInfo.collider.tag == "Obstacle")
         {
+            Debug.Log("hit the infinity symbol");
             movement.enabled = false;
             FindObjectOfType<GameManager>().EndGame();
         }
-        if (collisionInfo.collider.tag != "Ground")
-        {
-            movement.forwardForce = 100f;
-        }
+
+//         if (collisionInfo.collider.tag != "Ground")
+//         {
+//             movement.forwardForce = 100f;
+//         }
+
 
     }
 
