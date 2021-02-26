@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate() // use FixedUpdate as unity likes it better + will make it smoother
     {
+
         // add a forwardForce
         rb.AddForce(0, 0, forwardForce * Time.deltaTime); //we do this so the update speed isnt tied to framerate 
 
@@ -31,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKeyDown("space") && onGround == true)
         {
-            rb.AddForce(0, jumpForce * Time.deltaTime, 0, ForceMode.VelocityChange);
+            rb.AddForce(0, jumpForce * Time.deltaTime, 0, ForceMode.Impulse);
             onGround = false;
         }
         if (rb.position.y < -1)
@@ -40,6 +41,15 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
+
+    // void Update()
+    // {
+    //     if (Input.GetKeyDown("space") && onGround == true)
+    //     {
+    //         rb.AddForce(0, jumpForce * Time.deltaTime, 0, ForceMode.Impulse);
+    //         onGround = false;
+    //     }
+    // }
     void OnCollisionEnter(Collision other)
     {
         if (other.collider.tag == "Ground")
