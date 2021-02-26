@@ -8,8 +8,10 @@ public class PlayerCollision : MonoBehaviour
     {
         if (collisionInfo.collider.tag == "Obstacle")
         {
+            Debug.Log("hit the infinity symbol");
             movement.enabled = false;
             FindObjectOfType<GameManager>().EndGame();
         }
+
     }
 }
